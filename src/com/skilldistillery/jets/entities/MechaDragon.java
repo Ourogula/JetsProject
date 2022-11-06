@@ -9,7 +9,7 @@ public class MechaDragon extends Jet implements Firebreathing {
 	public void fly () {
 		int intFlytime =  (int) ((this.getRange()/this.getSpeed() ) * 100);
 		double flytime = ((double) intFlytime) / 100;
-		System.out.println("Fly across the lands with wings of steel! Flight time: " + flytime + " hours");
+		System.out.println(this.toString() + " Flight time: " + flytime + " hours");
 	}
 	
 	public void setFire () {

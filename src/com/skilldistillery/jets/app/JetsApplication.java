@@ -59,7 +59,7 @@ public class JetsApplication {
 				range = sc.nextInt();
 				break;
 			} catch (Exception e) {
-				System.out.println(e.getLocalizedMessage());
+				sc.nextLine();
 				System.out.println("Please enter a valid range.");
 			}
 		}
@@ -74,7 +74,7 @@ public class JetsApplication {
 				speed = sc.nextDouble();
 				break;
 			} catch (Exception e) {
-				System.out.println(e.getLocalizedMessage());
+				sc.nextLine();
 				System.out.println("Please enter a valid speed.");
 			}
 		}
@@ -89,7 +89,7 @@ public class JetsApplication {
 				price = sc.nextLong();
 				break;
 			} catch (Exception e) {
-				System.out.println(e.getLocalizedMessage());
+				sc.nextLine();
 				System.out.println("Please enter a valid price.");
 			}
 		}
@@ -108,8 +108,10 @@ public class JetsApplication {
 				try {
 					input = sc.nextInt();
 					if (input > 0 && input < 11) {
+						sc.nextLine();
 						break;
 					} else {
+						sc.nextLine();
 						System.out.println("Please enter a valid number from the menu!");
 					}
 				} catch (Exception e) {
@@ -180,12 +182,16 @@ public class JetsApplication {
 			// Lets remove a Jet
 			case 9:
 				int idx = 0;
-				while (true) {
+				boolean multiplePlanes = true;
+				while (multiplePlanes) {
 					System.out.println("Please enter the number of the jet you would like to remove: ");
 					fleet.listFleet();
 					try {
 						idx = sc.nextInt();
-						if (idx >= fleet.getSize() || idx < 1) {
+						if (fleet.getSize() == 1) {
+							System.out.println("Can't remove the last jet!");
+							multiplePlanes = false;
+						} else if (idx >= fleet.getSize() || idx < 1) {
 							System.out.println("Please enter a valid number from the fleet.");
 							continue;
 						}
@@ -195,7 +201,9 @@ public class JetsApplication {
 						System.out.println("Please enter a valid number from the fleet!");
 					}
 				}
-				fleet.removeJet(idx);
+				if (multiplePlanes) {
+					fleet.removeJet(idx);
+				}
 				break;
 
 			// I'm done with this!
@@ -203,9 +211,9 @@ public class JetsApplication {
 				System.out.println("Goodbye!");
 				keepPlaying = false;
 			}
-			
+
 			input = 0;
-			
+
 		}
 		sc.close();
 	}

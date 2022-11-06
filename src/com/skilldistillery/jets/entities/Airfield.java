@@ -28,7 +28,7 @@ public class Airfield {
 	// Calls fly() on all jets in the fleet
 	public void razeMechaDragons() {
 		for (Jet jet : fleet) {
-			if (jet instanceof MechaDragon) {
+			if (jet instanceof Firebreathing) {
 				((MechaDragon)jet).setFire();
 			}
 		}
@@ -37,7 +37,7 @@ public class Airfield {
 	// Calls fly() on all jets in the fleet
 	public void sneakStealthJets() {
 		for (Jet jet : fleet) {
-			if (jet instanceof StealthJet) {
+			if (jet instanceof Stealthy) {
 				((StealthJet) jet).sneak();
 			}
 		}
@@ -46,7 +46,7 @@ public class Airfield {
 	// Calls fly() on all jets in the fleet
 	public void loadPassengerJets() {
 		for (Jet jet : fleet) {
-			if (jet instanceof PassengerJet) {
+			if (jet instanceof Transporter) {
 				((PassengerJet)jet).loadCargo();
 			}
 		}

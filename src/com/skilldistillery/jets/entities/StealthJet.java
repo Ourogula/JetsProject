@@ -9,7 +9,7 @@ public class StealthJet extends Jet implements Stealthy {
 	public void fly () {
 		int intFlytime =  (int) ((this.getRange()/this.getSpeed() ) * 100);
 		double flytime = ((double) intFlytime) / 100;
-		System.out.println("Fly away my scions of shadows! Flight time: " + flytime + " hours");
+		System.out.println(this.toString() + " Flight time: " + flytime + " hours");
 	}
 	
 	public void sneak () {
