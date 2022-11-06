@@ -1,0 +1,5 @@
+PassengerJet,Boeing 747,320.0,1800,22000000
+MechaDragon,Gidorah MkII,220.0,400,2200000
+MechaDragon,Gidorah MkIII,400.0,1000,5500000
+StealthJet,Nighthawk,990.0,2200,58000000
+PassengerJet,Cesna,180.0,200,350000
